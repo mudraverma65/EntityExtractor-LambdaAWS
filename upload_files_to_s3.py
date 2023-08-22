@@ -4,7 +4,7 @@ import boto3
 
 def upload_files_to_s3(event, context):
     s3_client = boto3.client('s3')
-    folder_path = 'C:/CSCI5410/A3/t'  # Update with the actual folder path on your machine
+    folder_path = 'C:/CSCI5410/A3/t'
 
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
@@ -19,5 +19,4 @@ def upload_files_to_s3(event, context):
 
     return 'Upload completed'
 
-# Testing the function locally
 upload_files_to_s3(None, None)
